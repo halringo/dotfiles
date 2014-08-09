@@ -1,0 +1,2 @@
+" .gvimrc
+colorscheme slate
