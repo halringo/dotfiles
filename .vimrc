@@ -23,6 +23,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " 便利
 NeoBundle 'Shougo/unite.vim'
 
+" ファイル
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'Shougo/neomru.vim'
+
+" 補完
+NeoBundle 'Shougo/neocomplete.vim'
+
 call neobundle#end()
 
 " Required:
@@ -36,3 +43,13 @@ NeoBundleCheck
 " General
 " ===
 set number
+
+
+" Plugin
+" ===
+
+" neocomplete
+" ---
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+
