@@ -1,7 +1,7 @@
 " .vimrc
 
 " NeoBundle
-" ===
+" =====
 if has('vim_starting')
   set nocompatible               " Be iMproved
 
@@ -41,12 +41,39 @@ NeoBundleCheck
 
 
 " General
-" ===
+" =====
+
+" 行番号表示
 set number
+
+" 不可視文字表示
+set list
+
+" 不可視文字を表示する文字
+set listchars=tab:»\ ,trail:«,extends:›,precedes:‹
+
+" ステータスライン
+set statusline=%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}\ %3.lL,%2.v\ /%3.LL\ %P
+
+" カレント行ハイライトON
+set cursorline
+
+" 自動インデント
+set autoindent
+
+" タブ
+set tabstop=2  " 画面上でタブ文字が占める幅
+set shiftwidth=2  " 自動インデントやコマンド "<<", ">>" でずれる幅
+
+" スクロールする時に上下が見えるようにする
+set scrolloff=5
+
+" ビープ音を鳴らさない
+set visualbell t_vb=
 
 
 " Plugin
-" ===
+" =====
 
 " neocomplete
 " ---
