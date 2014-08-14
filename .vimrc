@@ -22,6 +22,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " 便利
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+      \ 'build' : {
+      \     'windows' : 'tools\\update-dll-mingw',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+NeoBundle 'Shougo/vimshell.vim'
 
 " ファイル
 NeoBundle 'Shougo/vimfiler.vim'
