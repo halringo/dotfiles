@@ -59,7 +59,7 @@ set number
 set list
 
 " 不可視文字を表示する文字
-set listchars=tab:»\ ,trail:«,extends:›,precedes:‹
+set listchars=tab:›\ ,trail:∙,extends:»,precedes:«
 
 " ステータスライン
 set statusline=%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}\ %3.lL,%2.v\ /%3.LL\ %P
