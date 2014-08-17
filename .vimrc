@@ -113,6 +113,19 @@ nnoremap <silent> [unite]c :<C-u>UniteWithCurrentDir file<CR>
 nnoremap <silent> [unite]g :<C-u>Unite register<CR>
 nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
 
+" Start insert. (挿入モードで開始する)
+call unite#custom#profile('default', 'context', {
+\   'start_insert': 1
+\ })
+
+" matchers - あいまい検索
+call unite#custom#source('file,file/new,buffer,file_rec',
+\ 'matchers', 'matcher_fuzzy')
+
+" sorters - 一致した順に並べる
+call unite#custom#source('buffer,file,file_rec',
+\ 'sorters', 'sorter_rank')
+
 
 " neocomplete
 " ---
