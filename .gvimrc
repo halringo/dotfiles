@@ -7,7 +7,7 @@
 set guifont=Ricty\ Diminished\ Regular:h14
 
 " ウィンドウ幅
-set columns=130
+set columns=240
 
 " ウィンドウ高さ
 set lines=70

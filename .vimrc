@@ -20,8 +20,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
-" 便利
+" Unite
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/unite-outline'
+
+" 便利
 NeoBundle 'Shougo/vimproc.vim', {
       \ 'build' : {
       \     'windows' : 'tools\\update-dll-mingw',
@@ -34,7 +38,6 @@ NeoBundle 'Shougo/vimshell.vim'
 
 " ファイル
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/neomru.vim'
 
 " 補完
 NeoBundle 'Shougo/neocomplete.vim'
@@ -98,6 +101,18 @@ set visualbell t_vb=
 
 " Plugin
 " =====
+
+" Unite
+" ---
+nnoremap [unite] <Nop>
+nmap <Space>u [unite]
+
+nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir file<CR>
+nnoremap <silent> [unite]c :<C-u>UniteWithCurrentDir file<CR>
+nnoremap <silent> [unite]g :<C-u>Unite register<CR>
+nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
+
 
 " neocomplete
 " ---
