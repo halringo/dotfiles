@@ -67,6 +67,17 @@ set statusline=%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}\ %3.lL,
 " カレント行ハイライトON
 set cursorline
 
+" 入力途中のコマンドを表示
+set showcmd
+
+" タイムアウト(マッピングはタイムアウトしない。キーコードは0.1秒でタイムアウトする)
+set notimeout
+set ttimeout
+set ttimeoutlen=100
+
+" 履歴に保存される項目の数
+set history=1000
+
 " 自動インデント
 set autoindent
 
@@ -81,11 +92,15 @@ set scrolloff=5
 set visualbell t_vb=
 
 
+" mapping
+" =====
+
+
 " Plugin
 " =====
 
 " neocomplete
 " ---
 " Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup=1
 
