@@ -107,6 +107,7 @@ set visualbell t_vb=
 nnoremap [unite] <Nop>
 nmap <Space>u [unite]
 
+nnoremap <silent> [unite]u :<C-u>Unite buffer bookmark<CR>
 nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir file<CR>
 nnoremap <silent> [unite]c :<C-u>UniteWithCurrentDir file<CR>
@@ -125,6 +126,15 @@ call unite#custom#source('file,file/new,buffer,file_rec',
 " sorters - 一致した順に並べる
 call unite#custom#source('buffer,file,file_rec',
 \ 'sorters', 'sorter_rank')
+
+
+" Vimfiler
+" -----
+nnoremap [vimfiler] <Nop>
+nmap <Space>f [vimfiler]
+
+nnoremap <silent> [vimfiler]c :<C-u>VimFilerCurrentDir<CR>
+nnoremap <silent> [vimfiler]b :<C-u>VimFilerBufferDir<CR>
 
 
 " neocomplete
