@@ -12,6 +12,9 @@ set columns=240
 " ウィンドウ高さ
 set lines=70
 
+" ウィンドウ透明度(0=不透明 100=透明)
+set transparency=15
+
 
 " Color
 " =====
