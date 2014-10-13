@@ -41,6 +41,7 @@ NeoBundle 'Shougo/vimfiler.vim'
 
 " 補完
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'kana/vim-smartinput'
 
 call neobundle#end()
 
@@ -86,7 +87,7 @@ set autoindent
 
 " タブ
 set tabstop=2  " 画面上でタブ文字が占める幅
-set shiftwidth=2  " 自動インデントやコマンド "<<", ">>" でずれる幅
+set shiftwidth=2  " 自動インデントやコマンド <<, >> でずれる幅
 
 " スクロールする時に上下が見えるようにする
 set scrolloff=5
