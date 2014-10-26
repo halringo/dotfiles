@@ -57,10 +57,10 @@ setopt auto_menu
 alias ll='ls -aGl'
 
 # パス
-export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
+# export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
 
 # Homebrew
-export PATH=/usr/local/bin:$PATH
+# export PATH=/usr/local/bin:$PATH
 
 # rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
