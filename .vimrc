@@ -47,6 +47,7 @@ NeoBundle 'Shougo/vimfiler.vim'
 " 補完
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'kana/vim-smartinput'
+NeoBundle 'cohama/vim-smartinput-endwise'  " 下の方で call している
 
 call neobundle#end()
 
@@ -135,7 +136,7 @@ call unite#custom#source('buffer,file,file_rec',
 
 
 " Vimfiler
-" -----
+" ---
 nnoremap [vimfiler] <Nop>
 nmap <Space>f [vimfiler]
 
@@ -148,3 +149,7 @@ nnoremap <silent> [vimfiler]b :<C-u>VimFilerBufferDir<CR>
 " Use neocomplete.
 let g:neocomplete#enable_at_startup=1
 
+
+" vim-smartinput-endwise
+" ---
+call smartinput_endwise#define_default_rules()
