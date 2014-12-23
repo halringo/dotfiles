@@ -94,6 +94,7 @@ set autoindent
 " タブ
 set tabstop=2  " 画面上でタブ文字が占める幅
 set shiftwidth=2  " 自動インデントやコマンド <<, >> でずれる幅
+set expandtab  " 半角スペースでインデントを行う。タブ文字を挿入したいときは CTRL-V<Tab> を使う。
 
 " スクロールする時に上下が見えるようにする
 set scrolloff=5
