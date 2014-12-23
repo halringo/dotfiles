@@ -6,7 +6,9 @@
 if !1 | finish | endif
 
 if has('vim_starting')
-  set nocompatible               " Be iMproved
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
 
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
