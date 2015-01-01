@@ -49,6 +49,9 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'cohama/vim-smartinput-endwise'  " 下の方で call している
 
+" HTML
+NeoBundle 'mattn/emmet-vim'
+
 call neobundle#end()
 
 " Required:
@@ -154,3 +157,16 @@ let g:neocomplete#enable_at_startup=1
 " vim-smartinput-endwise
 " ---
 call smartinput_endwise#define_default_rules()
+
+
+" Emmet-vim
+" ---
+let g:user_emmet_install_global=0  " すべてのファイルタイプで有効にしない
+autocmd FileType html,css,eruby EmmetInstall  " 有効にするファイルタイプを指定する
+let g:user_emmet_leader_key='<C-k>'  " trigger key 変更
+" html:5 日本語化
+" インデント変更
+let g:user_emmet_settings={
+\ 'lang': 'ja',
+\ 'indentation': '  '
+\}
