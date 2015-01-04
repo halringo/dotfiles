@@ -4,7 +4,13 @@
 " =====
 
 " フォント
-set guifont=Ricty\ Diminished\ Regular:h14
+set guifont=CodeM\ Regular:h12
+" set guifontwide=CodeM\ Regular:h12
+
+" Mac なら以下の設定でも上手く表示される
+" 本当は幅が2倍で同じ高さのフォントを指定しなければならない？
+" set guifont=Source\ Code\ Pro:h12
+" set guifontwide=Migu\ 1M\ Regular:h12
 
 " ウィンドウ幅
 set columns=270
