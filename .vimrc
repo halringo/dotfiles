@@ -46,6 +46,8 @@ NeoBundle 'Shougo/vimfiler.vim'
 
 " 補完
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'cohama/vim-smartinput-endwise'  " 下の方で call している
 
@@ -154,6 +156,27 @@ nnoremap <silent> [vimfiler]b :<C-u>VimFilerBufferDir<CR>
 let g:neocomplete#enable_at_startup=1
 
 
+" Neosnippet
+" ---
+" Plugin key-mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+
 " vim-smartinput-endwise
 " ---
 call smartinput_endwise#define_default_rules()
@@ -161,9 +184,15 @@ call smartinput_endwise#define_default_rules()
 
 " Emmet-vim
 " ---
-let g:user_emmet_install_global=0  " すべてのファイルタイプで有効にしない
-autocmd FileType html,css,eruby EmmetInstall  " 有効にするファイルタイプを指定する
-let g:user_emmet_leader_key='<C-k>'  " trigger key 変更
+" すべてのファイルタイプで有効にしない
+let g:user_emmet_install_global=0
+
+" 有効にするファイルタイプを指定する
+autocmd FileType html,css,eruby EmmetInstall
+
+" trigger key 変更
+" let g:user_emmet_leader_key='<C-k>'
+
 " html:5 日本語化
 " インデント変更
 let g:user_emmet_settings={
