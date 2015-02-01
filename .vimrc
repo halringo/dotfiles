@@ -110,6 +110,8 @@ set visualbell t_vb=
 
 " mapping
 " =====
+" v を2回で行末まで選択
+vnoremap v $h
 
 
 " Plugin
