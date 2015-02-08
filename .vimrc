@@ -185,25 +185,6 @@ endif
 call smartinput_endwise#define_default_rules()
 
 
-" Emmet-vim
-" ---
-" すべてのファイルタイプで有効にしない
-let g:user_emmet_install_global=0
-
-" 有効にするファイルタイプを指定する
-autocmd FileType html,css,eruby EmmetInstall
-
-" trigger key 変更
-" let g:user_emmet_leader_key='<C-k>'
-
-" html:5 日本語化
-" インデント変更
-let g:user_emmet_settings={
-\ 'lang': 'ja',
-\ 'indentation': '  '
-\}
-
-
 " caw.vim
 " ---
 nnoremap [caw] <Nop>
@@ -221,3 +202,22 @@ vmap <silent> [caw]w <Plug>(caw:wrap:toggle)
 
 " 行末にコメントを挿入する時に記号の左側に入る文字
 let g:caw_a_sp_left="  "
+
+
+" Emmet-vim
+" ---
+" すべてのファイルタイプで有効にしない
+let g:user_emmet_install_global=0
+
+" 有効にするファイルタイプを指定する
+autocmd FileType html,css,eruby EmmetInstall
+
+" trigger key 変更
+" let g:user_emmet_leader_key='<C-k>'
+
+" html:5 日本語化
+" インデント変更
+let g:user_emmet_settings={
+\ 'lang': 'ja',
+\ 'indentation': '  '
+\}
