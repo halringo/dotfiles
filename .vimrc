@@ -51,6 +51,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'cohama/vim-smartinput-endwise'  " 下の方で call している
 NeoBundle 'tyru/caw.vim'
+NeoBundle 'AndrewRadev/switch.vim'
 
 " HTML
 NeoBundle 'mattn/emmet-vim'
@@ -221,3 +222,8 @@ let g:user_emmet_settings={
 \ 'lang': 'ja',
 \ 'indentation': '  '
 \}
+
+
+" switch.vim
+" ---
+nmap <Space>s :Switch<CR>
