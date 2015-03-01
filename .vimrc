@@ -51,6 +51,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'cohama/vim-smartinput-endwise'  " 下の方で call している
 NeoBundle 'tyru/caw.vim'
+NeoBundle 'AndrewRadev/switch.vim'
 
 " HTML
 NeoBundle 'mattn/emmet-vim'
@@ -185,6 +186,25 @@ endif
 call smartinput_endwise#define_default_rules()
 
 
+" caw.vim
+" ---
+nnoremap [caw] <Nop>
+nmap <Space>c [caw]
+
+vnoremap [caw] <Nop>
+vmap <Space>c [caw]
+
+nmap <silent> [caw]i <Plug>(caw:i:toggle)
+vmap <silent> [caw]i <Plug>(caw:i:toggle)
+nmap <silent> [caw]a <Plug>(caw:a:toggle)
+vmap <silent> [caw]a <Plug>(caw:a:toggle)
+nmap <silent> [caw]w <Plug>(caw:wrap:toggle)
+vmap <silent> [caw]w <Plug>(caw:wrap:toggle)
+
+" 行末にコメントを挿入する時に記号の左側に入る文字
+let g:caw_a_sp_left="  "
+
+
 " Emmet-vim
 " ---
 " すべてのファイルタイプで有効にしない
@@ -204,20 +224,6 @@ let g:user_emmet_settings={
 \}
 
 
-" caw.vim
+" switch.vim
 " ---
-nnoremap [caw] <Nop>
-nmap <Space>c [caw]
-
-vnoremap [caw] <Nop>
-vmap <Space>c [caw]
-
-nmap <silent> [caw]i <Plug>(caw:i:toggle)
-vmap <silent> [caw]i <Plug>(caw:i:toggle)
-nmap <silent> [caw]a <Plug>(caw:a:toggle)
-vmap <silent> [caw]a <Plug>(caw:a:toggle)
-nmap <silent> [caw]w <Plug>(caw:wrap:toggle)
-vmap <silent> [caw]w <Plug>(caw:wrap:toggle)
-
-" 行末にコメントを挿入する時に記号の左側に入る文字
-let g:caw_a_sp_left="  "
+nmap <Space>s :Switch<CR>
