@@ -110,6 +110,12 @@ set scrolloff=5
 set visualbell t_vb=
 
 
+" script
+" =====
+" matchit.vim
+source $VIMRUNTIME/macros/matchit.vim
+
+
 " mapping
 " =====
 " v を2回で行末まで選択
