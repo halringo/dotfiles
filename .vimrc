@@ -109,6 +109,15 @@ set scrolloff=5
 " ビープ音を鳴らさない
 set visualbell t_vb=
 
+" スワップファイルを作成しない
+set noswapfile
+
+" バックアップファイルを作成しない
+set nobackup
+
+" undofile を作成しない
+set noundofile
+
 
 " script
 " =====
