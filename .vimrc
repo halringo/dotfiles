@@ -43,6 +43,7 @@ NeoBundle 'Shougo/vimshell.vim'
 
 " ファイル
 NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'scrooloose/nerdtree'
 
 " 補完
 NeoBundle 'Shougo/neocomplete.vim'
