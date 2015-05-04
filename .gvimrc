@@ -14,10 +14,10 @@ set guifontwide=Migu\ 1M\ Regular:h12
 
 
 " ウィンドウ幅
-set columns=271
+set columns=192
 
 " ウィンドウ高さ
-set lines=76
+set lines=47
 
 " ウィンドウ透明度(0=不透明 100=透明)
 set transparency=15
