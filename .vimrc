@@ -250,8 +250,13 @@ nmap <Space>s :Switch<CR>
 nnoremap [NERDtree] <Nop>
 nmap <Space>n [NERDtree]
 
+nnoremap <silent> [NERDtree]n :<C-u>NERDTree<CR>
 nnoremap <silent> [NERDtree]t :<C-u>NERDTreeToggle<CR>
 nnoremap <silent> [NERDtree]m :<C-u>NERDTreeMirror<CR>
 nnoremap <silent> [NERDtree]w :<C-u>NERDTreeClose<CR>
-nnoremap <silent> [NERDtree]f :<C-u>NERDTreeFind<CR>
+nnoremap <silent> [NERDtree]i :<C-u>NERDTreeFind<CR>
 nnoremap <silent> [NERDtree]c :<C-u>NERDTreeCWD<CR>
+nnoremap <silent> [NERDtree]f :<C-u>NERDTreeFocus<CR>
+
+" デフォルトで隠しファイルを表示する
+let NERDTreeShowHidden=1
