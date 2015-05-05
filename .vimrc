@@ -243,3 +243,15 @@ let g:user_emmet_settings={
 " switch.vim
 " ---
 nmap <Space>s :Switch<CR>
+
+
+" NERD tree
+" ---
+nnoremap [NERDtree] <Nop>
+nmap <Space>n [NERDtree]
+
+nnoremap <silent> [NERDtree]t :<C-u>NERDTreeToggle<CR>
+nnoremap <silent> [NERDtree]m :<C-u>NERDTreeMirror<CR>
+nnoremap <silent> [NERDtree]w :<C-u>NERDTreeClose<CR>
+nnoremap <silent> [NERDtree]f :<C-u>NERDTreeFind<CR>
+nnoremap <silent> [NERDtree]c :<C-u>NERDTreeCWD<CR>
