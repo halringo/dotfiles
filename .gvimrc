@@ -12,9 +12,6 @@ set guifontwide=Migu\ 1M\ Regular:h12
 " 下記のようにウエイトを指定することも可能
 " set guifont=Source\ Code\ Pro\ Light:h12
 
-" set guifont=CodeM\ Regular:h12
-" set guifontwide=CodeM\ Regular:h12
-
 
 " ウィンドウ幅
 set columns=271
@@ -37,7 +34,7 @@ set imdisable
 colorscheme slate
 
 " カレント行ハイライト(アンダーライン)
-highlight CursorLine gui=underline guifg=NONE guibg=NONE guisp=DarkGray
+" highlight CursorLine gui=underline guifg=NONE guibg=NONE guisp=DarkGray
 
 " プリプロセッサ命令
 highlight PreProc guibg=NONE

@@ -57,6 +57,10 @@ NeoBundle 'AndrewRadev/switch.vim'
 " HTML
 NeoBundle 'mattn/emmet-vim'
 
+" 移動
+NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+
 call neobundle#end()
 
 " Required:
@@ -83,7 +87,7 @@ set listchars=tab:›\ ,trail:‹,extends:»,precedes:«
 set statusline=%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}\ %3.lL,%2.v\ /%3.LL\ %P
 
 " カレント行ハイライトON
-set cursorline
+" set cursorline
 
 " 入力途中のコマンドを表示
 set showcmd
@@ -243,3 +247,30 @@ let g:user_emmet_settings={
 " switch.vim
 " ---
 nmap <Space>s :Switch<CR>
+
+
+" NERD tree
+" ---
+nnoremap [NERDtree] <Nop>
+nmap <Space>n [NERDtree]
+
+nnoremap <silent> [NERDtree]n :<C-u>NERDTree<CR>
+nnoremap <silent> [NERDtree]t :<C-u>NERDTreeToggle<CR>
+nnoremap <silent> [NERDtree]m :<C-u>NERDTreeMirror<CR>
+nnoremap <silent> [NERDtree]w :<C-u>NERDTreeClose<CR>
+nnoremap <silent> [NERDtree]i :<C-u>NERDTreeFind<CR>
+nnoremap <silent> [NERDtree]c :<C-u>NERDTreeCWD<CR>
+nnoremap <silent> [NERDtree]f :<C-u>NERDTreeFocus<CR>
+
+" デフォルトで隠しファイルを表示する
+let NERDTreeShowHidden=1
+
+
+" clever-f.vim
+" ---
+let g:clever_f_mark_char_color="Error"
+
+
+" EasyMotion
+" ---
+map <Leader> <Plug>(easymotion-prefix)
