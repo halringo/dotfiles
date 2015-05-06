@@ -34,7 +34,7 @@ set imdisable
 colorscheme slate
 
 " カレント行ハイライト(アンダーライン)
-highlight CursorLine gui=underline guifg=NONE guibg=NONE guisp=DarkGray
+" highlight CursorLine gui=underline guifg=NONE guibg=NONE guisp=DarkGray
 
 " プリプロセッサ命令
 highlight PreProc guibg=NONE
