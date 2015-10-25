@@ -6,18 +6,18 @@
 " フォント
 " Mac なら下記の設定でも上手く表示される
 " 本当は幅が2倍で同じ高さのフォントを指定しなければならない？
-set guifont=Source\ Code\ Pro:h12
-set guifontwide=Migu\ 1M\ Regular:h12
+set guifont=Source\ Code\ Pro:h14
+set guifontwide=Migu\ 1M\ Regular:h14
 
 " 下記のようにウエイトを指定することも可能
 " set guifont=Source\ Code\ Pro\ Light:h12
 
 
 " ウィンドウ幅
-set columns=271
+set columns=237
 
 " ウィンドウ高さ
-set lines=76
+set lines=63
 
 " ウィンドウ透明度(0=不透明 100=透明)
 set transparency=15
