@@ -41,6 +41,9 @@ NeoBundle 'Shougo/vimproc.vim', {
       \ }
 NeoBundle 'Shougo/vimshell.vim'
 
+" statusline
+NeoBundle 'itchyny/lightline.vim'
+
 " ファイル
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'scrooloose/nerdtree'
@@ -84,7 +87,7 @@ set list
 set listchars=tab:›\ ,trail:‹,extends:»,precedes:«
 
 " ステータスライン
-set statusline=%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}\ %3.lL,%2.v\ /%3.LL\ %P
+" set statusline=%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}\ %3.lL,%2.v\ /%3.LL\ %P
 
 " カレント行ハイライトON
 " set cursorline
@@ -163,6 +166,13 @@ call unite#custom#source('file,file/new,buffer,file_rec',
 " sorters - 一致した順に並べる
 call unite#custom#source('buffer,file,file_rec',
 \ 'sorters', 'sorter_rank')
+
+
+" lightline.vim
+" ---
+let g:lightline = {
+  \ 'colorscheme': 'wombat'
+  \ }
 
 
 " Vimfiler
@@ -273,4 +283,9 @@ let g:clever_f_mark_char_color="Error"
 
 " EasyMotion
 " ---
-map <Leader> <Plug>(easymotion-prefix)
+" EasyMotion のデフォルトリーダーは `<Leader><Leader>`
+" それを `<Leader>` に変更する
+" map <Leader> <Plug>(easymotion-prefix)
+
+" 2-character search motion
+" nmap <Leader><Leader>s <Plug>(easymotion-s2)

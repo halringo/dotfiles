@@ -63,4 +63,4 @@ alias ll='ls -aGl'
 # export PATH=/usr/local/bin:$PATH
 
 # rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
