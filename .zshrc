@@ -53,8 +53,8 @@ setopt share_history
 # 補完候補が複数あるときに自動的に一覧表示する
 setopt auto_menu
 
-# エイリアス
-alias ll='ls -aGl'
+# alias
+alias ll='ls -aGlh'
 
 # パス
 # export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
