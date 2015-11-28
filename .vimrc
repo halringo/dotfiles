@@ -288,4 +288,4 @@ let g:clever_f_mark_char_color="Error"
 " map <Leader> <Plug>(easymotion-prefix)
 
 " 2-character search motion
-" nmap <Leader><Leader>s <Plug>(easymotion-s2)
+nmap <Leader><Leader>s <Plug>(easymotion-s2)
