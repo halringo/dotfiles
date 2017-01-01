@@ -64,6 +64,9 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 
+" syntax highlighting
+NeoBundle 'slim-template/vim-slim'
+
 call neobundle#end()
 
 " Required:
@@ -218,21 +221,26 @@ call smartinput_endwise#define_default_rules()
 
 " caw.vim
 " ---
-nnoremap [caw] <Nop>
-nmap <Space>c [caw]
+" 行末にコメントを挿入する時にコメント記号の左側に入る文字
+let g:caw_dollarpos_sp_left=" "
 
-vnoremap [caw] <Nop>
-vmap <Space>c [caw]
-
-nmap <silent> [caw]i <Plug>(caw:i:toggle)
-vmap <silent> [caw]i <Plug>(caw:i:toggle)
-nmap <silent> [caw]a <Plug>(caw:a:toggle)
-vmap <silent> [caw]a <Plug>(caw:a:toggle)
-nmap <silent> [caw]w <Plug>(caw:wrap:toggle)
-vmap <silent> [caw]w <Plug>(caw:wrap:toggle)
+" nnoremap [caw] <Nop>
+" nmap <Space>c [caw]
+"
+" vnoremap [caw] <Nop>
+" vmap <Space>c [caw]
+"
+" nmap <silent> [caw]i <Plug>(caw:i:toggle)
+" vmap <silent> [caw]i <Plug>(caw:i:toggle)
+" nmap <silent> [caw]a <Plug>(caw:a:toggle)
+" vmap <silent> [caw]a <Plug>(caw:a:toggle)
+" nmap <silent> [caw]w <Plug>(caw:wrap:toggle)
+" vmap <silent> [caw]w <Plug>(caw:wrap:toggle)
 
 " 行末にコメントを挿入する時に記号の左側に入る文字
-let g:caw_a_sp_left="  "
+" Vim を起動すると、下記のメッセージが表示されるので修正する
+" g:caw_a_sp_left is deprecated. please use g:caw_dollarpos_sp_left instead.
+" let g:caw_a_sp_left="  "
 
 
 " Emmet-vim

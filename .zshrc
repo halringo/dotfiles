@@ -11,13 +11,23 @@ autoload -Uz compinit
 compinit
 
 # プロンプト
+# DEFAULT=$'\U2600 ' # BLACK SUN WITH RAYS
+# ERROR=$'\U2601 '   # CLOUD
+ERROR=$'\U2602 '   # UMBRELLA
+
 # 左
 PROMPT="
 %F{yellow}[%~]%f
-%n@%m %(?.%#.%F{red}%#%f) "
+%n@%m %(?.%#.%F{blue}${ERROR}%f %F{red}%#%f) "
+# %n@%m %(?.%#.%F{red}%#%f) "
+# %n@%m %(?.%#.${ERROR} %F{red}%#%f) "
+# %n@%m %(?.${DEFAULT}.${ERROR}) "
 
 # 右
 RPROMPT="%F{green}%*%f"
+
+# %# rootなら #、そうでなければ %
+# %F{色}%f 文字色
 
 # もしかして
 #   No    コマンドを訂正せずに実行する。
@@ -63,4 +73,4 @@ alias ll='ls -aGlh'
 # export PATH=/usr/local/bin:$PATH
 
 # rbenv
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
