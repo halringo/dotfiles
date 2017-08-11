@@ -4,6 +4,9 @@
 " True Colour を有効にする
 set termguicolors
 
+
+" dein
+" ---
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -21,6 +24,8 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/denite.nvim')
   " call dein#add('Shougo/neosnippet.vim')
   " call dein#add('Shougo/neosnippet-snippets')
   call dein#add('crusoexia/vim-monokai')
@@ -44,10 +49,15 @@ syntax enable
 
 "End dein Scripts-------------------------
 
+
+" deoplete
+" ---
+call deoplete#enable()
+
+
 " 使用するカラースキーム
 colorscheme monokai
 " colorscheme slate
 
 " 行番号を表示
 set number
-
