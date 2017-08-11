@@ -13,13 +13,13 @@ compinit
 # プロンプト
 # DEFAULT=$'\U2600 ' # BLACK SUN WITH RAYS
 # ERROR=$'\U2601 '   # CLOUD
-ERROR=$'\U2602 '   # UMBRELLA
+# ERROR=$'\U2602 '   # UMBRELLA
 
 # 左
 PROMPT="
 %F{yellow}[%~]%f
-%n@%m %(?.%#.%F{blue}${ERROR}%f %F{red}%#%f) "
-# %n@%m %(?.%#.%F{red}%#%f) "
+%n@%m %(?.%#.%F{red}%#%f) "
+# %n@%m %(?.%#.%F{blue}${ERROR}%f %F{red}%#%f) "
 # %n@%m %(?.%#.${ERROR} %F{red}%#%f) "
 # %n@%m %(?.${DEFAULT}.${ERROR}) "
 
@@ -74,3 +74,6 @@ alias ll='ls -aGlh'
 
 # rbenv
 eval "$(rbenv init -)"
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
