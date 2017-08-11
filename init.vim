@@ -52,6 +52,7 @@ syntax enable
 
 " deoplete
 " ---
+" deoplete を開始する
 call deoplete#enable()
 
 
@@ -59,5 +60,5 @@ call deoplete#enable()
 colorscheme monokai
 " colorscheme slate
 
-" 行番号を表示
+" 行番号を表示する
 set number
