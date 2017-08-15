@@ -24,10 +24,12 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('~/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
+  " 補完
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/denite.nvim')
   " call dein#add('Shougo/neosnippet.vim')
   " call dein#add('Shougo/neosnippet-snippets')
+  " カラースキーム
   call dein#add('crusoexia/vim-monokai')
 
   " You can specify revision/branch/tag.
