@@ -1,6 +1,17 @@
-# Created by newuser for 5.0.5
+# .zshrc
+# ===
 
 export LANG=ja_JP.UTF-8
+
+# autoload
+# ---
+# 関数の自動読み込み
+#
+# ### オプション
+# `-U`
+# - 関数ロード時にユーザーが定義したエイリアスを展開しない
+# `-z`
+# - 関数を zsh 形式で読み込む
 
 # 色を使用出来るようにする
 autoload -Uz colors
