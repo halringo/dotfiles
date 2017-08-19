@@ -6,7 +6,6 @@ export LANG=ja_JP.UTF-8
 # autoload
 # ---
 # 関数の自動読み込み
-#
 # ### オプション
 # `-U`
 # - 関数ロード時にユーザーが定義したエイリアスを展開しない
@@ -52,30 +51,49 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-# コマンド名の訂正(もしかして)
-setopt correct
+# ディレクトリスタックのサイズ
+DIRSTACKSIZE=20
 
-# cd したディレクトリを記録する
+
+# Options
+# ---
+# cd で移動したディレクトリを自動でディレクトリスタックに push する
 setopt auto_pushd
 
-# 重複したディレクトリを追加しない
+# 重複したディレクトリはディレクトリスタックに push しない
 setopt pushd_ignore_dups
 
-# ビープ音を鳴らさない
-setopt no_beep
-setopt nolistbeep
+# Tab キーを連続で押すと自動的にメニュー補完を使用する
+# デフォルトで有効
+setopt auto_menu
+
+# 同時に起動されている Zsh の間で履歴を共有する
+setopt share_history
+
+# コマンドのスペル修正を行う(もしかして)
+setopt correct
 
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
 
-# 同時に起動したzshの間でヒストリを共有する
-setopt share_history
+# ZLE でビープ音を鳴らさない
+# unsetopt beep と同じ
+setopt no_beep
 
-# 補完候補が複数あるときに自動的に一覧表示する
-setopt auto_menu
 
 # alias
-alias ll='ls -aGlh'
+# ---
+# ### ll
+# `-a`
+# - `.` ではじまるファイルを含め、ディレクトリ中のすべてのファイルをリスト表示する
+# `-l`
+# - 詳細表示
+# `-h`
+# - サイズを人間が読みやすい形式で表示する
+# `-G`
+# - 色付けする
+alias ll='ls -alhG'
+
 
 # パス
 # export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
