@@ -27,6 +27,7 @@ if dein#load_state('~/.local/share/dein')
   " 補完
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/denite.nvim')
+  call dein#add('cohama/lexima.vim')
   " call dein#add('Shougo/neosnippet.vim')
   " call dein#add('Shougo/neosnippet-snippets')
   " シンタックスハイライト
@@ -80,7 +81,7 @@ call deoplete#enable()
 " コメント
 autocmd ColorScheme * highlight Comment guifg=#999999
 " 対応する括弧
-autocmd ColorScheme * highlight MatchParen guifg=NONE
+" autocmd ColorScheme * highlight MatchParen guifg=NONE
 
 " 使用するカラースキーム
 colorscheme monokai
