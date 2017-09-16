@@ -97,6 +97,9 @@ autocmd ColorScheme * highlight StatusLineNC guibg=#e8e8e3
 " 対応する括弧
 " autocmd ColorScheme * highlight MatchParen guifg=NONE guibg=#00ff00
 
+" denite フィルタにマッチした文字の色
+autocmd ColorScheme * highlight deniteMatchedChar guifg=#ff0000 guibg=NONE
+
 " 使用するカラースキーム
 colorscheme monokai
 " colorscheme slate
