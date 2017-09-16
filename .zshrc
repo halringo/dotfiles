@@ -29,8 +29,8 @@ compinit
 
 # 左
 PROMPT="
-%B%F{yellow}[%~]%f%b
-%B%F{green}%n@%m%f%b %(?.%#.%F{red}%#%f) "
+%F{yellow}[%~]%f
+%F{green}%n@%m%f %(?.%#.%F{red}%#%f) "
 # %n@%m %(?.%#.%F{blue}${ERROR}%f %F{red}%#%f) "
 # %n@%m %(?.%#.${ERROR} %F{red}%#%f) "
 # %n@%m %(?.${DEFAULT}.${ERROR}) "
