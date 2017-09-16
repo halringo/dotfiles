@@ -145,7 +145,15 @@ esac
 case ${OSTYPE} in
   # macOS
   darwin*)
-    # nothing
+    # peco
+    # コマンド履歴を検索して実行
+    function peco-search-history() {
+      BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
+      CURSOR=$#BUFFER
+      zle -R -c
+    }
+    zle -N peco-search-history
+    bindkey '^R' peco-search-history
     ;;
 
   # Ubuntu (Linux)
