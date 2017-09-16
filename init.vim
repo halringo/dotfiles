@@ -33,6 +33,8 @@ if dein#load_state('~/.local/share/dein')
 
   " インターフェイス
   call dein#add('Shougo/denite.nvim')
+  call dein#add('Shougo/neomru.vim') " 最近開いたファイル
+  call dein#add('Shougo/neoyank.vim') " ヤンク履歴
 
   " シンタックスハイライト
   call dein#add('slim-template/vim-slim')
@@ -94,6 +96,9 @@ autocmd ColorScheme * highlight StatusLine guifg=#476a8d guibg=#e8e8e3
 autocmd ColorScheme * highlight StatusLineNC guibg=#e8e8e3
 " 対応する括弧
 " autocmd ColorScheme * highlight MatchParen guifg=NONE guibg=#00ff00
+
+" denite フィルタにマッチした文字の色
+autocmd ColorScheme * highlight deniteMatchedChar guifg=#ff0000 guibg=NONE
 
 " 使用するカラースキーム
 colorscheme monokai
