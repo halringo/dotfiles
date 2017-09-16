@@ -26,14 +26,22 @@ if dein#load_state('~/.local/share/dein')
   " Add or remove your plugins here:
   " 補完
   call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/denite.nvim')
   call dein#add('cohama/lexima.vim')
+
   " call dein#add('Shougo/neosnippet.vim')
   " call dein#add('Shougo/neosnippet-snippets')
+
+  " インターフェイス
+  call dein#add('Shougo/denite.nvim')
+
   " シンタックスハイライト
   call dein#add('slim-template/vim-slim')
+
   " カラースキーム
   call dein#add('crusoexia/vim-monokai')
+
+  " Git
+  call dein#add('tpope/vim-fugitive')
 
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -81,7 +89,7 @@ call deoplete#enable()
 " コメント
 autocmd ColorScheme * highlight Comment guifg=#999999
 " 対応する括弧
-" autocmd ColorScheme * highlight MatchParen guifg=NONE
+autocmd ColorScheme * highlight MatchParen guifg=NONE guibg=#00ff00
 
 " 使用するカラースキーム
 colorscheme monokai
@@ -140,6 +148,10 @@ set expandtab
 " カーソルの上または下に指定した数の行が表示される
 " スクロールする時にカーソルの上下が見えるようにする
 set scrolloff=5
+
+" カーソルの外観
+" カーソルを点滅させる(それ以外はデフォルト)
+set guicursor=n-v-c-sm:block-blinkwait700-blinkon400-blinkoff250,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20-blinkwait700-blinkon400-blinkoff250
 
 
 " Key mapping
