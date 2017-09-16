@@ -3,6 +3,8 @@
 
 export LANG=ja_JP.UTF-8
 
+# fpath=(~/.zsh/completion $fpath)
+
 # autoload
 # ---
 # 関数の自動読み込み
@@ -28,7 +30,7 @@ compinit
 # 左
 PROMPT="
 %F{yellow}[%~]%f
-%n@%m %(?.%#.%F{red}%#%f) "
+%F{green}%n@%m%f %(?.%#.%F{red}%#%f) "
 # %n@%m %(?.%#.%F{blue}${ERROR}%f %F{red}%#%f) "
 # %n@%m %(?.%#.${ERROR} %F{red}%#%f) "
 # %n@%m %(?.${DEFAULT}.${ERROR}) "
@@ -83,26 +85,87 @@ setopt no_beep
 
 # alias
 # ---
-# ### ll
-# `-a`
-# - `.` ではじまるファイルを含め、ディレクトリ中のすべてのファイルをリスト表示する
-# `-l`
-# - 詳細表示
-# `-h`
-# - サイズを人間が読みやすい形式で表示する
-# `-G`
-# - 色付けする
-alias ll='ls -alhG'
+case ${OSTYPE} in
+  # macOS
+  darwin*)
+    # ### ll
+    # `-a`
+    # - `.` ではじまるファイルを含め、ディレクトリ中のすべてのファイルをリスト表示する
+    # `-l`
+    # - 詳細表示
+    # `-h`
+    # - サイズを人間が読みやすい形式で表示する
+    # `-G`
+    # - 色付けする
+    alias ll='ls -alhG'
+    ;;
+
+  # Ubuntu (Linux)
+  linux*)
+    # ### ll
+    # `-a` `--all`
+    # - `.` ではじまるファイルを含め、 ディレクトリ中のすべてのファイルをリスト表示する
+    # `-l`
+    # - 詳細表示
+    # `-h` `--human-readable`
+    # - サイズを人間が読みやすい形式で表示する
+    # `--color=auto`
+    # - 標準出力が端末の場合のみ色付けする
+    alias ll='ls -alh --color=auto'
+    ;;
+esac
 
 
-# パス
-# export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
+# PATH
+# ---
+case ${OSTYPE} in
+  # macOS
+  darwin*)
+    # export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
+    
+    # Homebrew
+    # export PATH=/usr/local/bin:$PATH
+    
+    # rbenv
+    eval "$(rbenv init -)"
+    
+    # nodebrew
+    export PATH=$HOME/.nodebrew/current/bin:$PATH
+    ;;
 
-# Homebrew
-# export PATH=/usr/local/bin:$PATH
+  # Ubuntu (Linux)
+  linux*)
+    # nothing
+    ;;
+esac
 
-# rbenv
-eval "$(rbenv init -)"
 
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+# Widgets
+# ---
+case ${OSTYPE} in
+  # macOS
+  darwin*)
+    # peco
+    # コマンド履歴を検索して実行
+    function peco-search-history() {
+      BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
+      CURSOR=$#BUFFER
+      zle -R -c
+    }
+    zle -N peco-search-history
+    bindkey '^R' peco-search-history
+    ;;
+
+  # Ubuntu (Linux)
+  linux*)
+    # peco
+    # コマンド履歴を検索して実行
+    function peco-search-history() {
+      BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --layout bottom-up --query "$LBUFFER" | sed 's/\\n/\n/')"
+      CURSOR=$#BUFFER
+      zle -R -c
+    }
+    zle -N peco-search-history
+    bindkey '^R' peco-search-history
+    ;;
+esac
