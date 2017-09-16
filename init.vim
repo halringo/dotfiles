@@ -119,9 +119,8 @@ set laststatus=2
 " %h        ヘルプバッファフラグ。表示されるのは "[ヘルプ]"。
 " %w        プレビューウィンドウフラグ。表示されるのは "[プレビュー]"。
 " %q        "[Quickfix List]"、"[Location List]" または空文字。
-" [0x%02.B] カーソル下の文字の文字コードの16進数表現。
-"           ゼロパディングする。最低2文字分の長さを使用する。
-"           [0xと]は単純にその文字を表示しているだけ。
+" %{fugitive#statusline()}
+"           現在のブランチと現在編集されているファイルのコミットを含むインジケータを取得します。
 " %y        バッファ内のファイルのタイプ。例えば "[vim]"。'filetype' を参照。
 " %{'['.(&fileencoding!=''?&fileencoding:&encoding).'/'.&fileformat.']'}
 "           カレントバッファのファイルの文字エンコーディングと<EOL>(改行コード)を表示する。
@@ -137,7 +136,7 @@ set laststatus=2
 " %2.cC     何列目にカーソルがあるか。末尾のCはただのC。
 " \ 
 " %3.p%%    現在行がファイル内の何％の位置にあるか (CTRL-G と同様)末尾の%%はただの%。
-set statusline=%f%=\ %m%r%h%w%q[0x%02.B]%y%{'['.(&fileencoding!=''?&fileencoding:&encoding).'/'.&fileformat.']'}\ %3.l/%3.LL,%2.cC\ %3.p%%
+set statusline=%f%=\ %m%r%h%w%q%{fugitive#statusline()}%y%{'['.(&fileencoding!=''?&fileencoding:&encoding).'/'.&fileformat.']'}\ %3.l/%3.LL,%2.cC\ %3.p%%
 
 " ファイル内の <Tab> が対応する空白の数
 set tabstop=2
