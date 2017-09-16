@@ -89,7 +89,7 @@ call deoplete#enable()
 " コメント
 autocmd ColorScheme * highlight Comment guifg=#999999
 " 対応する括弧
-autocmd ColorScheme * highlight MatchParen guifg=NONE guibg=#00ff00
+" autocmd ColorScheme * highlight MatchParen guifg=NONE guibg=#00ff00
 
 " 使用するカラースキーム
 colorscheme monokai
