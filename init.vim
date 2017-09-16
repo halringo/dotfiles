@@ -87,7 +87,11 @@ call deoplete#enable()
 " ---
 " ### カラースキームからの変更
 " コメント
-autocmd ColorScheme * highlight Comment guifg=#999999
+autocmd ColorScheme * highlight Comment guifg=#909090
+" ステータスライン(カレントウィンドウ)
+autocmd ColorScheme * highlight StatusLine guifg=#476a8d guibg=#e8e8e3
+" ステータスライン(非カレントウィンドウ)
+autocmd ColorScheme * highlight StatusLineNC guibg=#e8e8e3
 " 対応する括弧
 " autocmd ColorScheme * highlight MatchParen guifg=NONE guibg=#00ff00
 
