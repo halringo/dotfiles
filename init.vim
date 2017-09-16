@@ -33,6 +33,8 @@ if dein#load_state('~/.local/share/dein')
 
   " インターフェイス
   call dein#add('Shougo/denite.nvim')
+  call dein#add('Shougo/neomru.vim') " 最近開いたファイル
+  call dein#add('Shougo/neoyank.vim') " ヤンク履歴
 
   " シンタックスハイライト
   call dein#add('slim-template/vim-slim')
