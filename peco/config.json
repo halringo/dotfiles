@@ -1,7 +1,7 @@
 {
   "Layout": "bottom-up",
   "Style": {
-    "Selected": ["bold", "black", "on_yellow"],
-    "Matched": ["red"]
+    "Selected": ["white", "on_black"],
+    "Matched": ["blue"]
   }
 }
