@@ -27,6 +27,8 @@ if dein#load_state('~/.local/share/dein')
   " 補完
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('cohama/lexima.vim')
+  call dein#add('tyru/caw.vim')
+  call dein#add('tpope/vim-surround')
 
   " call dein#add('Shougo/neosnippet.vim')
   " call dein#add('Shougo/neosnippet-snippets')
@@ -116,10 +118,10 @@ set laststatus=2
 
 " ステータス行の表示内容
 " %f        バッファ内のファイルのパス(入力された通り、またはカレントディレクトリに対する相対パス)
+" %m        修正フラグ。表示されるのは "[+]"。'modifiable' がオフのときは"[-]"。
 " %=        左寄せ項目と右寄せ項目の区切り。欄 width は指定できない。
 "           つまり、これより左に書いてあるものは左寄せで、右側に書いてあるものは右寄せで表示される。
 " \         ただの空白。\でエスケープする必要がある。
-" %m        修正フラグ。表示されるのは "[+]"。'modifiable' がオフのときは"[-]"。
 " %r        読み込み専用フラグ。表示されるのは "[RO]"。
 " %h        ヘルプバッファフラグ。表示されるのは "[ヘルプ]"。
 " %w        プレビューウィンドウフラグ。表示されるのは "[プレビュー]"。
@@ -141,7 +143,7 @@ set laststatus=2
 " %2.cC     何列目にカーソルがあるか。末尾のCはただのC。
 " \ 
 " %3.p%%    現在行がファイル内の何％の位置にあるか (CTRL-G と同様)末尾の%%はただの%。
-set statusline=%f%=\ %m%r%h%w%q%{fugitive#statusline()}%y%{'['.(&fileencoding!=''?&fileencoding:&encoding).'/'.&fileformat.']'}\ %3.l/%3.LL,%2.cC\ %3.p%%
+set statusline=%f%m%=\ %r%h%w%q%{fugitive#statusline()}%y%{'['.(&fileencoding!=''?&fileencoding:&encoding).'/'.&fileformat.']'}\ %3.l/%3.LL,%2.cC\ %3.p%%
 
 " ファイル内の <Tab> が対応する空白の数
 set tabstop=2
