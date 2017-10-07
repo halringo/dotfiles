@@ -90,6 +90,10 @@ call deoplete#enable()
 " colorscheme
 " ---
 " ### カラースキームからの変更
+" Normal
+autocmd ColorScheme * highlight Normal guibg=#000000
+" 行番号
+autocmd ColorScheme * highlight LineNr guibg=#000000
 " コメント
 autocmd ColorScheme * highlight Comment guifg=#909090
 " ステータスライン(カレントウィンドウ)
@@ -97,6 +101,7 @@ autocmd ColorScheme * highlight StatusLine guifg=#476a8d guibg=#e8e8e3
 " ステータスライン(非カレントウィンドウ)
 autocmd ColorScheme * highlight StatusLineNC guibg=#e8e8e3
 " 対応する括弧
+autocmd ColorScheme * highlight MatchParen guibg=#ff0000
 " autocmd ColorScheme * highlight MatchParen guifg=NONE guibg=#00ff00
 
 " denite フィルタにマッチした文字の色
@@ -109,6 +114,9 @@ colorscheme monokai
 
 " options
 " ---
+" マウスを利用可能にする
+set mouse=a
+
 " 行番号を表示
 set number
 
