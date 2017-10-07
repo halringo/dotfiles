@@ -114,6 +114,9 @@ colorscheme monokai
 
 " options
 " ---
+" マウスを利用可能にする
+set mouse=a
+
 " 行番号を表示
 set number
 
