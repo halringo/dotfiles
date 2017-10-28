@@ -26,6 +26,7 @@ if dein#load_state('~/.local/share/dein')
   " Add or remove your plugins here:
   " 補完
   call dein#add('Shougo/deoplete.nvim')
+  call dein#add('roxma/nvim-yarp')
   call dein#add('cohama/lexima.vim')
   call dein#add('tyru/caw.vim')
   call dein#add('tpope/vim-surround')
@@ -69,6 +70,9 @@ syntax enable
 
 " deoplete
 " ---
+" Neovim リモートプラグイン機能の代わりに nvim-yarp を使用する
+let g:deoplete#enable_yarp = 1
+
 " deoplete を開始する
 call deoplete#enable()
 
