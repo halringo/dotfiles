@@ -94,6 +94,8 @@ call deoplete#enable()
 autocmd ColorScheme * highlight Normal guibg=#000000
 " 行番号
 autocmd ColorScheme * highlight LineNr guibg=#000000
+" "nbsp", "space", "tab" and "trail" in 'listchars'
+autocmd ColorScheme * highlight Whitespace guifg=#ff0000
 " コメント
 autocmd ColorScheme * highlight Comment guifg=#909090
 " ステータスライン(カレントウィンドウ)
@@ -119,6 +121,11 @@ set mouse=a
 
 " 行番号を表示
 set number
+
+" 不可視文字を表示
+set list
+" デフォルトの不可視文字設定
+" listchars=tab:> ,trail:-,nbsp:+
 
 " ステータス行の表示
 " 2: 常に表示
