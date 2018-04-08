@@ -26,7 +26,7 @@ if dein#load_state('~/.local/share/dein')
   " Add or remove your plugins here:
   " 補完
   call dein#add('Shougo/deoplete.nvim')
-  call dein#add('cohama/lexima.vim')
+  " call dein#add('cohama/lexima.vim')
   call dein#add('tyru/caw.vim')
   call dein#add('tpope/vim-surround')
 
@@ -46,6 +46,9 @@ if dein#load_state('~/.local/share/dein')
 
   " Git
   call dein#add('tpope/vim-fugitive')
+
+  " 検索
+  call dein#add('mileszs/ack.vim')
 
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -75,6 +78,16 @@ call deoplete#enable()
 
 " denite
 " ---
+" Change file/rec command.
+call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+" Ag command on grep source
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+
 " file_rec は matcher_fuzzy と matcher_ignore_globs を使用する(この設定をすると動作が非常に遅くなってしまうのでコメントアウト)
 " call denite#custom#source('file_rec', 'matchers', ['matcher_fuzzy', 'matcher_ignore_globs'])
 " 除外するファイル・ディレクトリ
@@ -87,6 +100,14 @@ call deoplete#enable()
 "        \ ])
 
 
+" ack.vim
+" ---
+" ack ではなく ag を使用する
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+
 " colorscheme
 " ---
 " ### カラースキームからの変更
@@ -94,6 +115,8 @@ call deoplete#enable()
 autocmd ColorScheme * highlight Normal guibg=#000000
 " 行番号
 autocmd ColorScheme * highlight LineNr guibg=#000000
+" カーソルがある画面上の行を強調
+autocmd ColorScheme * highlight CursorLine guibg=#303030
 " "nbsp", "space", "tab" and "trail" in 'listchars'
 autocmd ColorScheme * highlight Whitespace guifg=#ff0000
 " コメント
@@ -108,6 +131,9 @@ autocmd ColorScheme * highlight MatchParen guibg=#ff0000
 
 " denite フィルタにマッチした文字の色
 autocmd ColorScheme * highlight deniteMatchedChar guifg=#ff0000 guibg=NONE
+" denite プレビューウィンドウのハイライト
+autocmd ColorScheme * highlight denitePreviewLine guibg=#404040
+" autocmd ColorScheme * highlight denitePreviewLine gui=underline
 
 " 使用するカラースキーム
 colorscheme monokai
@@ -117,7 +143,7 @@ colorscheme monokai
 " options
 " ---
 " マウスを利用可能にする
-set mouse=a
+" set mouse=a
 
 " 行番号を表示
 set number
@@ -178,8 +204,66 @@ set scrolloff=5
 " カーソルを点滅させる(それ以外はデフォルト)
 set guicursor=n-v-c-sm:block-blinkwait700-blinkon400-blinkoff250,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20-blinkwait700-blinkon400-blinkoff250
 
+" bracketed paste を無効にする
+" set t_BE=
+
+" カーソルがある画面上の行を強調
+" set cursorline
+
 
 " Key mapping
 " ---
-" vを二回で行末まで選択
+" v を二回で行末まで選択
 vnoremap v $h
+
+" Mac のショートカットと同じキーで左右移動
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+
+" ### Denite
+" :Denite だけ入力
+nnoremap <Space>d :Denite
+" resume
+nnoremap <Space>dd :Denite<Space>-resume<CR>
+" バッファ
+nnoremap <Space>db :Denite<Space>buffer<CR>
+" changes
+nnoremap <Space>dc :Denite<Space>change<CR>
+" command history
+nnoremap <Space>dh :Denite<Space>command_history<CR>
+" カレントディレクトリ以下のディレクトリ
+nnoremap <Space>di :Denite<Space>directory_rec<CR>
+" カレントディレクトリのみのファイル
+nnoremap <Space>df :Denite<Space>file<CR>
+" カレントディレクトリ以下のファイル
+nnoremap <Space>dr :Denite<Space>file_rec<CR>
+" カレントディレクトリ以下の grep (ag)
+nnoremap <Space>dg :Denite<Space>grep<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" 最近開いたファイル
+nnoremap <Space>dm :Denite<Space>file_mru<CR>
+" ヤンク履歴
+nnoremap <Space>dy :Denite<Space>neoyank<CR>
+
+" 以前のバッファで次の候補をすぐに開く
+nnoremap <Space>dn :Denite<Space>-resume<Space>-cursor-pos=+1<Space>-immediately<CR>
+" 以前のバッファで前の候補をすぐに開く
+nnoremap <Space>dp :Denite<Space>-resume<Space>-cursor-pos=-1<Space>-immediately<CR>
+
+" Rails grep
+nnoremap <Space>rag :Denite<Space>grep<Space>-path=app/assets<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>rcg :Denite<Space>grep<Space>-path=app/controllers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>rhg :Denite<Space>grep<Space>-path=app/helpers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>rig :Denite<Space>grep<Space>-path=app/mailers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>rmg :Denite<Space>grep<Space>-path=app/models<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>rvg :Denite<Space>grep<Space>-path=app/views<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+
+" Rails RSpec grep
+nnoremap <Space>scg :Denite<Space>grep<Space>-path=spec/controllers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>sfg :Denite<Space>grep<Space>-path=spec/factories<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>shg :Denite<Space>grep<Space>-path=spec/helpers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>slg :Denite<Space>grep<Space>-path=spec/lib<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>sig :Denite<Space>grep<Space>-path=spec/mailers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>smg :Denite<Space>grep<Space>-path=spec/models<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>srg :Denite<Space>grep<Space>-path=spec/requests<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>ssg :Denite<Space>grep<Space>-path=spec/support<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+nnoremap <Space>svg :Denite<Space>grep<Space>-path=spec/views<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
