@@ -29,6 +29,7 @@ if dein#load_state('~/.local/share/dein')
   " call dein#add('cohama/lexima.vim')
   call dein#add('tyru/caw.vim')
   call dein#add('tpope/vim-surround')
+  " call dein#add('vim-ruby/vim-ruby')
 
   " call dein#add('Shougo/neosnippet.vim')
   " call dein#add('Shougo/neosnippet-snippets')
@@ -49,6 +50,10 @@ if dein#load_state('~/.local/share/dein')
 
   " 検索
   call dein#add('mileszs/ack.vim')
+
+  " file system explorer
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('Xuyuanp/nerdtree-git-plugin')
 
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -106,6 +111,23 @@ call denite#custom#var('grep', 'final_opts', [])
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+
+" nerdtree-git-plugin
+" ---
+" インジケーターの指定
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "M",
+    \ "Staged"    : "S",
+    \ "Untracked" : "U",
+    \ "Renamed"   : "R",
+    \ "Unmerged"  : "U",
+    \ "Deleted"   : "D",
+    \ "Dirty"     : "*",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 
 " colorscheme
