@@ -122,13 +122,14 @@ case ${OSTYPE} in
   # macOS
   darwin*)
     # export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
-    
+
     # Homebrew
     # export PATH=/usr/local/bin:$PATH
-    
+    export PATH="/usr/local/sbin:$PATH"
+
     # rbenv
     eval "$(rbenv init -)"
-    
+
     # nodebrew
     export PATH=$HOME/.nodebrew/current/bin:$PATH
     ;;
