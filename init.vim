@@ -37,7 +37,7 @@ if dein#load_state('~/.local/share/dein')
   " インターフェイス
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/neomru.vim') " 最近開いたファイル
-  call dein#add('Shougo/neoyank.vim') " ヤンク履歴
+  " call dein#add('Shougo/neoyank.vim') " ヤンク履歴
 
   " シンタックスハイライト
   call dein#add('slim-template/vim-slim')
@@ -106,14 +106,14 @@ function! s:denite_filter_my_settings() abort
 endfunction
 
 " Change file/rec command.
-call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+" call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 " Ag command on grep source
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
+" call denite#custom#var('grep', 'command', ['ag'])
+" call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+" call denite#custom#var('grep', 'recursive_opts', [])
+" call denite#custom#var('grep', 'pattern_opt', [])
+" call denite#custom#var('grep', 'separator', ['--'])
+" call denite#custom#var('grep', 'final_opts', [])
 
 " file_rec は matcher_fuzzy と matcher_ignore_globs を使用する(この設定をすると動作が非常に遅くなってしまうのでコメントアウト)
 " call denite#custom#source('file_rec', 'matchers', ['matcher_fuzzy', 'matcher_ignore_globs'])
@@ -269,48 +269,48 @@ inoremap <C-b> <Left>
 
 " ### Denite
 " :Denite だけ入力
-nnoremap <Space>d :Denite
+" nnoremap <Space>d :Denite
 " resume
-nnoremap <Space>dd :Denite<Space>-resume<CR>
+" nnoremap <Space>dd :Denite<Space>-resume<CR>
 " バッファ
-nnoremap <Space>db :Denite<Space>buffer<CR>
+" nnoremap <Space>db :Denite<Space>buffer<CR>
 " changes
-nnoremap <Space>dc :Denite<Space>change<CR>
+" nnoremap <Space>dc :Denite<Space>change<CR>
 " command history
-nnoremap <Space>dh :Denite<Space>command_history<CR>
+" nnoremap <Space>dh :Denite<Space>command_history<CR>
 " カレントディレクトリ以下のディレクトリ
-nnoremap <Space>di :Denite<Space>directory_rec<CR>
+" nnoremap <Space>di :Denite<Space>directory_rec<CR>
 " カレントディレクトリのみのファイル
-nnoremap <Space>df :Denite<Space>file<CR>
+" nnoremap <Space>df :Denite<Space>file<CR>
 " カレントディレクトリ以下のファイル
-nnoremap <Space>dr :Denite<Space>file_rec<CR>
+" nnoremap <Space>dr :Denite<Space>file_rec<CR>
 " カレントディレクトリ以下の grep (ag)
-nnoremap <Space>dg :Denite<Space>grep<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>dg :Denite<Space>grep<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
 " 最近開いたファイル
-nnoremap <Space>dm :Denite<Space>file_mru<CR>
+" nnoremap <Space>dm :Denite<Space>file_mru<CR>
 " ヤンク履歴
-nnoremap <Space>dy :Denite<Space>neoyank<CR>
+" nnoremap <Space>dy :Denite<Space>neoyank<CR>
 
 " 以前のバッファで次の候補をすぐに開く
-nnoremap <Space>dn :Denite<Space>-resume<Space>-cursor-pos=+1<Space>-immediately<CR>
+" nnoremap <Space>dn :Denite<Space>-resume<Space>-cursor-pos=+1<Space>-immediately<CR>
 " 以前のバッファで前の候補をすぐに開く
-nnoremap <Space>dp :Denite<Space>-resume<Space>-cursor-pos=-1<Space>-immediately<CR>
+" nnoremap <Space>dp :Denite<Space>-resume<Space>-cursor-pos=-1<Space>-immediately<CR>
 
 " Rails grep
-nnoremap <Space>rag :Denite<Space>grep<Space>-path=app/assets<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>rcg :Denite<Space>grep<Space>-path=app/controllers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>rhg :Denite<Space>grep<Space>-path=app/helpers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>rig :Denite<Space>grep<Space>-path=app/mailers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>rmg :Denite<Space>grep<Space>-path=app/models<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>rvg :Denite<Space>grep<Space>-path=app/views<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>rag :Denite<Space>grep<Space>-path=app/assets<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>rcg :Denite<Space>grep<Space>-path=app/controllers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>rhg :Denite<Space>grep<Space>-path=app/helpers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>rig :Denite<Space>grep<Space>-path=app/mailers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>rmg :Denite<Space>grep<Space>-path=app/models<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>rvg :Denite<Space>grep<Space>-path=app/views<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
 
 " Rails RSpec grep
-nnoremap <Space>scg :Denite<Space>grep<Space>-path=spec/controllers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>sfg :Denite<Space>grep<Space>-path=spec/factories<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>shg :Denite<Space>grep<Space>-path=spec/helpers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>slg :Denite<Space>grep<Space>-path=spec/lib<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>sig :Denite<Space>grep<Space>-path=spec/mailers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>smg :Denite<Space>grep<Space>-path=spec/models<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>srg :Denite<Space>grep<Space>-path=spec/requests<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>ssg :Denite<Space>grep<Space>-path=spec/support<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
-nnoremap <Space>svg :Denite<Space>grep<Space>-path=spec/views<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>scg :Denite<Space>grep<Space>-path=spec/controllers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>sfg :Denite<Space>grep<Space>-path=spec/factories<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>shg :Denite<Space>grep<Space>-path=spec/helpers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>slg :Denite<Space>grep<Space>-path=spec/lib<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>sig :Denite<Space>grep<Space>-path=spec/mailers<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>smg :Denite<Space>grep<Space>-path=spec/models<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>srg :Denite<Space>grep<Space>-path=spec/requests<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>ssg :Denite<Space>grep<Space>-path=spec/support<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
+" nnoremap <Space>svg :Denite<Space>grep<Space>-path=spec/views<Space>-auto-preview<Space>-highlight-preview-line=denitePreviewLine<CR>
